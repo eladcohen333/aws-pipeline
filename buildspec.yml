@@ -10,11 +10,11 @@ phases:
       - echo Build started on `date`
       - echo Pulling the Docker image...
       - docker build -t flask-app .
-      - docker tag flask-app:latest 794038243494.dkr.ecr.us-east-1.amazonaws.com/flask-app-repo:latest
+      - docker tag flask-app:latest 794038243494.dkr.ecr.us-east-1.amazonaws.com/flask-app:latest
   build:
     commands:
       - echo Pushing the Docker image...
-      - docker push 794038243494.dkr.ecr.us-east-1.amazonaws.com/flask-app-repo:latest
+      - docker push 794038243494.dkr.ecr.us-east-1.amazonaws.com/flask-app:latest
   post_build:
     commands:
       - echo Build completed on `date`
