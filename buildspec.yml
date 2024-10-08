@@ -6,35 +6,34 @@ phases:
       python: 3.9
   pre_build:
     commands:
-      - echo Checking Python and pip versions...
+      - echo Checking Python and pip versions
       - python --version
       - pip --version
-      - echo Installing Flask...
+      - echo Installing Flask
       - pip install flask
-      - echo Checking Docker version...
+      - echo Checking Docker version
       - docker --version
-      - echo Logging in to Amazon ECR...
+      - echo Logging in to Amazon ECR
       - aws --version
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 794038243494.dkr.ecr.us-east-1.amazonaws.com || exit 1
-      - echo ECR login successful
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 794038243494.dkr.ecr.us-east-1.amazonaws.com
       - REPOSITORY_URI=794038243494.dkr.ecr.us-east-1.amazonaws.com/flask-app
   build:
     commands:
       - echo Build started on `date`
-      - echo Contents of the current directory:
+      - echo Contents of the current directory
       - ls -la
-      - echo Contents of the Dockerfile:
+      - echo Contents of the Dockerfile
       - cat Dockerfile
-      - echo Building the Docker image...
-      - docker build --no-cache -t flask-app . || { echo "Docker build failed"; exit 1; }
+      - echo Building the Docker image
+      - docker build --no-cache -t flask-app .
       - echo Docker build successful
-      - docker tag flask-app:latest $REPOSITORY_URI:latest || exit 1
+      - docker tag flask-app:latest $REPOSITORY_URI:latest
       - echo Docker tag successful
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo Pushing the Docker image...
-      - docker push $REPOSITORY_URI:latest || exit 1
+      - echo Pushing the Docker image
+      - docker push $REPOSITORY_URI:latest
       - echo Docker push successful
 
 artifacts:
