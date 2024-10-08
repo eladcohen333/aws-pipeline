@@ -7,4 +7,4 @@ REPOSITORY_NAME="flask-app"
 IMAGE_TAG="latest"  # or a specific tag
 
 # Run the container (adjust ports and other options as needed)
-docker run -d -p 80:80 $ECR_URL/$REPOSITORY_NAME:$IMAGE_TAG
+docker run -d -p 5000:5000 $ECR_URL/$REPOSITORY_NAME:$IMAGE_TAG
