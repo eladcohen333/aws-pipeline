@@ -1,0 +1,21 @@
+version: 0.0
+os: linux
+files:
+  - source: /  # This section is optional if no files need to be copied.
+    destination: /home/ec2-user/app  # Directory where the app files will go.
+
+hooks:
+  BeforeInstall:
+    - location: scripts/pull_ecr_image.sh
+      timeout: 300
+      runas: ec2-user
+
+  AfterInstall:
+    - location: scripts/start_container.sh
+      timeout: 300
+      runas: ec2-user
+
+  ApplicationStop:
+    - location: scripts/stop_container.sh
+      timeout: 300
+      runas: ec2-user
