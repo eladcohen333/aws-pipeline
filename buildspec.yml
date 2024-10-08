@@ -1,6 +1,9 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      python: 3.9
   pre_build:
     commands:
       - echo Checking Python and pip versions...
@@ -18,8 +21,12 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - echo Contents of the current directory:
+      - ls -la
+      - echo Contents of the Dockerfile:
+      - cat Dockerfile
       - echo Building the Docker image...
-      - docker build -t flask-app . || exit 1
+      - docker build --no-cache -t flask-app . || { echo "Docker build failed"; exit 1; }
       - echo Docker build successful
       - docker tag flask-app:latest $REPOSITORY_URI:latest || exit 1
       - echo Docker tag successful
