@@ -9,8 +9,9 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
+            background: linear-gradient(135deg, #0073e6, #00bfff);
+            color: white;
+            overflow-x: hidden;
         }
         header {
             position: fixed;
@@ -32,9 +33,19 @@
         nav a:hover {
             color: #ffcc00;
         }
-        main {
-            padding: 100px 20px 20px; /* Space for fixed header */
+        .contact-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             text-align: center;
+            padding: 20px;
+            animation: fadeIn 2s ease;
+        }
+        .contact-section p {
+            font-size: 24px;
+            margin: 10px;
+            line-height: 1.6;
         }
         footer {
             background-color: #333;
@@ -44,6 +55,10 @@
             position: relative;
             bottom: 0;
             width: 100%;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -57,11 +72,13 @@
         </nav>
     </header>
     
-    <main>
-        <p>If you would like to connect with me regarding AWS or any other topics, feel free to reach out!</p>
-        <p>Email: <a href="mailto:eladcohen333@gmail.com">eladcohen333@gmail.com</a></p>
-        <p>You can also find me on <a href="https://www.linkedin.com/in/elad-cohen-1b39b7212/" style="color: #0073e6;">LinkedIn</a>.</p>
-    </main>
+    <div class="contact-section">
+        <div>
+            <p>If you would like to connect with me regarding AWS or any other topics, feel free to reach out!</p>
+            <p>Email: <a href="mailto:eladcohen333@gmail.com" style="color: white;">eladcohen333@gmail.com</a></p>
+            <p>You can also find me on <a href="https://www.linkedin.com/in/elad-cohen-1b39b7212/" style="color: #ffcc00;">LinkedIn</a>.</p>
+        </div>
+    </div>
 
     <footer>
         <p>Contact: <a href="mailto:eladcohen333@gmail.com" style="color: white;">eladcohen333@gmail.com</a></p>

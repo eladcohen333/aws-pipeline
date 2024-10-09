@@ -9,8 +9,9 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
+            background: linear-gradient(135deg, #0073e6, #00bfff);
+            color: white;
+            overflow-x: hidden;
         }
         header {
             position: fixed;
@@ -32,9 +33,19 @@
         nav a:hover {
             color: #ffcc00;
         }
-        main {
-            padding: 100px 20px 20px; /* Space for fixed header */
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             text-align: center;
+            padding: 20px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        .about-section p {
+            font-size: 24px;
+            margin: 10px;
+            line-height: 1.6;
         }
         footer {
             background-color: #333;
@@ -44,6 +55,10 @@
             position: relative;
             bottom: 0;
             width: 100%;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -57,10 +72,12 @@
         </nav>
     </header>
     
-    <main>
-        <p>I am Elad Cohen, an AWS architect passionate about cloud computing and its vast possibilities.</p>
-        <p>Currently, I am focusing on mastering AWS services and enhancing my architectural skills, particularly in CI/CD and other cloud technologies.</p>
-    </main>
+    <div class="about-section">
+        <div>
+            <p>I am Elad Cohen, an AWS architect passionate about cloud computing and its vast possibilities.</p>
+            <p>Currently, I am focusing on mastering AWS services and enhancing my architectural skills, particularly in CI/CD and other cloud technologies.</p>
+        </div>
+    </div>
 
     <footer>
         <p>Contact: <a href="mailto:eladcohen333@gmail.com" style="color: white;">eladcohen333@gmail.com</a></p>
