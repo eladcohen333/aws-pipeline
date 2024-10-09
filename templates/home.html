@@ -3,47 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Elad Cohen - AWS Architect & Cloud Professional</title>
+    <title>Home - Elad Cohen - AWS Architect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
             background-color: #f0f8ff;
             color: #333;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            overflow-x: hidden;
         }
         header {
-            background-color: #0073e6;
+            position: fixed;
+            width: 100%;
+            background: rgba(0, 115, 230, 0.9);
             color: white;
-            padding: 10px 20px;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
         }
         nav a {
-            margin: 10px;
+            margin: 0 15px;
             text-decoration: none;
             color: white;
             font-weight: bold;
+            transition: color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #ffcc00;
         }
-        main {
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #0073e6, #00bfff);
+            color: white;
+            text-align: center;
             padding: 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            animation: fadeIn 2s ease;
+        }
+        .hero p {
+            font-size: 24px;
+            animation: fadeIn 2s ease 0.5s;
         }
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
             position: relative;
             bottom: 0;
             width: 100%;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Elad Cohen - AWS Architect & Cloud Professional</h1>
+        <h1>Elad Cohen - AWS Architect</h1>
         <nav>
             <a href="/">Home</a>
             <a href="/about">About</a>
@@ -51,11 +77,12 @@
         </nav>
     </header>
     
-    <main>
-        <h2>Welcome to My AWS Certification Journey!</h2>
-        <p>This site showcases my journey in obtaining the AWS Certified Solutions Architect certification. I specialize in CI/CD and other AWS services.</p>
-        <p>Join me as I explore the world of cloud computing, sharing insights and experiences along the way!</p>
-    </main>
+    <div class="hero">
+        <div>
+            <h1>Welcome to My AWS Journey!</h1>
+            <p>Exploring the Cloud, Mastering AWS, and Building Future Solutions.</p>
+        </div>
+    </div>
 
     <footer>
         <p>Contact: <a href="mailto:eladcohen333@gmail.com" style="color: white;">eladcohen333@gmail.com</a></p>
